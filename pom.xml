@@ -18,6 +18,7 @@
         <github.account>wakaleo</github.account>
         <thucydides.version>1.8.4</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
+        
         <jelastic.environment>wakaleo</jelastic.environment>
     </properties>
 
