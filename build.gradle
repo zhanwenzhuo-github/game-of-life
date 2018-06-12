@@ -1,7 +1,3 @@
-task build {
-    doLast {
-        println 'Build!'
-    }
 
 task hello {
     doLast {
