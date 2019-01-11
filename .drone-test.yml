@@ -4,4 +4,4 @@ steps:
 - name: build
   image: registry.airwallex.com/java8:build
   commands:
-- ./gradlew clean build --parallel -Dfile.encoding=UTF8 -Pno-embedded-postgres
+  - ./gradlew clean build --parallel -Dfile.encoding=UTF8 -Pno-embedded-postgres
