@@ -4,7 +4,5 @@ name: default
 steps:
 - name: docker-info:
   image: registry.airwallex.com/drone-docker
-  volumes:
-  - /var/run/docker.sock:/var/run/docker.sock
   commands:
   - docker info
