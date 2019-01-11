@@ -2,7 +2,7 @@ kind: pipeline
 name: default
 
 steps:
-- name: docker-info:
+- name: docker-info
   image: registry.airwallex.com/drone-docker
   commands:
   - docker info
