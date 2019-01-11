@@ -2,11 +2,9 @@ kind: pipeline
 name: default
 
 steps:
-- name: frontend
-  image: node
+- name: docker-info
   commands:
-  - npm install
-  - npm test
+  - docker info
 
 - name: backend
   image: golang
