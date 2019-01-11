@@ -1,14 +1,15 @@
+kind: pipeline
+name: default
 
+steps:
+- name: frontend
+  image: node
+  commands:
+  - npm install
+  - npm test
 
-
-pipeline:
-  build:
-    image: golang
-    commands:
-
-
-services:
-  postgres:
-    image: postgres:9.4.5
-    environment:
-      - POSTGRES_USER=myapp
+- name: backend
+  image: golang
+  commands:
+  - go build
+  - go test
