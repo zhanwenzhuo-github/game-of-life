@@ -2,10 +2,6 @@ kind: pipeline
 name: default
 
 steps:
-- name: docker-info
-  commands:
-  - docker info
-
 - name: backend
   image: golang
   commands:
