@@ -2,7 +2,8 @@ kind: pipeline
 name: default
 
 steps:
-- name: build
-  image: registry.airwallex.com/java8:build
+- name: test
+  image: maven:3-jdk-10
   commands:
-  - ./gradlew clean build --parallel -Dfile.encoding=UTF8 -Pno-embedded-postgres
+  - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - mvn test -B
