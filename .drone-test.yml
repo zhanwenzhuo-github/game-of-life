@@ -1,5 +1,6 @@
 kind: pipeline
 name: default
+
 steps:
 - name: build
   image: registry.airwallex.com/java8:build
