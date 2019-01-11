@@ -1,9 +1,7 @@
 kind: pipeline
 name: default
-
 steps:
-- name: test
-  image: gradle:jdk10
+- name: build
+  image: registry.airwallex.com/java8:build
   commands:
-  - gradle assemble
-  - gradle check
+- ./gradlew clean build --parallel -Dfile.encoding=UTF8 -Pno-embedded-postgres
