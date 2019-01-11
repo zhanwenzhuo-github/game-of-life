@@ -1,7 +1,3 @@
-workspace:
-  base: /opt
-  path: core_services
-
 pipeline:
   docker-info:
     group: Info
