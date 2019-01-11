@@ -12,4 +12,5 @@ steps:
   
 volumes:
 - name: docker-sock
-  temp: {}
+  host:
+    path: /var/run/docker.sock
