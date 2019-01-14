@@ -1,5 +1,5 @@
 kind: pipeline
-name: clone
+name: game-of-life
 
 steps:
 - name: docker-info
