@@ -1,16 +1,35 @@
 kind: pipeline
-name: default
+name: clone
 
 steps:
 - name: docker-info
   image: registry.airwallex.com/drone-docker
+  pull: always
   volumes:
   - name: docker-sock
     path: /var/run/docker.sock
   commands:
   - docker info
   
+- name: build-service
+  image: registry.airwallex.com/java8:build
+  pull: always
+  volumes:
+  - name: gradle-cache
+    path: /gradle-cache
+  - name: root-m2
+    path: /root/.m2
+
+  
+  
 volumes:
 - name: docker-sock
   host:
     path: /var/run/docker.sock
+- name: gradle-cache
+  host:
+    path: /Storage/Gradle-Cache
+- name: root-m2
+  host:
+    path: /Storage/Maven-Cache
+  
