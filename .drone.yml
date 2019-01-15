@@ -15,9 +15,8 @@ steps:
   image: plugins/slack:1
   pull: always
   settings:
-    webhook: https://hooks.slack.com/services/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
+    webhook: https://hooks.slack.com/services/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
     channel: rails-prod-monitor
-    #channel: global-drone-builds
 
 - name: build-service
   image: registry.airwallex.com/java8:build
