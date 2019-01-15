@@ -1,4 +1,5 @@
 kind: pipeline
+name: game-of-life
 
 steps:
 - name: ping
