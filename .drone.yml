@@ -18,6 +18,7 @@ steps:
     webhook: https://hooks.slack.com/services/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
     channel: rails-prod-monitor
 
+services:
 - name: build-service
   image: registry.airwallex.com/java8:build
   pull: always
@@ -27,12 +28,8 @@ steps:
   - name: root-m2
     path: /root/.m2
   commands:
-  - whomai
-  - pwd
-  - ls -al
-  #- ./gradlew -g /gradle-cache clean bootJar --parallel -x test -Dfile.encoding=UTF8
+  - ./gradlew -g /gradle-cache clean bootJar --parallel -x test -Dfile.encoding=UTF8
 
-  
   
 volumes:
 - name: docker-sock
