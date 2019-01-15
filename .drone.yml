@@ -27,7 +27,10 @@ steps:
   - name: root-m2
     path: /root/.m2
   commands:
-  - ./gradlew -g /gradle-cache clean bootJar --parallel -x test -Dfile.encoding=UTF8
+  - whomai
+  - pwd
+  - ls -al
+  #- ./gradlew -g /gradle-cache clean bootJar --parallel -x test -Dfile.encoding=UTF8
 
   
   
