@@ -1,13 +1,8 @@
 kind: pipeline
-name: game-of-life
+name: default
 
 steps:
-- name: ping
-  image: redis
+- name: build
+  image: registry.airwallex.com/java8:build
   commands:
-  - sleep 30
-  - redis-cli -h cache ping
-
-services:
-- name: cache
-  image: redis
+- ./gradlew clean build --parallel -Dfile.encoding=UTF8 -Pno-embedded-postgres
