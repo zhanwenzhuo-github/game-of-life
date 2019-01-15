@@ -12,14 +12,12 @@ steps:
   - docker info
 
 - name: notify-build-started
-  image: registry.airwallex.com/airwallex-buildbot:latest
+  image: plugins/slack:1
   pull: always
-  channel: rails-prod-monitor
-  #channel: global-drone-builds
-  position: PreBuild
-  author: ${DRONE_COMMIT_AUTHOR}
-  when:
-    status:  [ failure, success ]
+  settings:
+    webhook: https://hooks.slack.com/services/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
+    channel: rails-prod-monitor
+    #channel: global-drone-builds
 
 - name: build-service
   image: registry.airwallex.com/java8:build
