@@ -14,7 +14,8 @@ steps:
 - name: notify-build-started
   image: registry.airwallex.com/airwallex-buildbot:latest
   pull: always
-  channel: global-drone-builds
+  channel: rails-prod-monitor
+  #channel: global-drone-builds
   position: PreBuild
   author: ${DRONE_COMMIT_AUTHOR}
   when:
