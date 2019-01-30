@@ -2,8 +2,14 @@ kind: pipeline
 name: default
 
 steps:
-- name: build
-  image: registry.airwallex.com/java8:build
+- name: frontend
+  image: node
   commands:
-  - ./gradlew clean build --parallel -Dfile.encoding=UTF8 -Pno-embedded-postgres
-  
+  - npm install
+  - npm test
+
+- name: backend
+  image: golang
+  commands:
+  - go build
+  - go test
